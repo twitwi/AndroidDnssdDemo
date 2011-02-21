@@ -413,6 +413,7 @@ is divided into following sections:
             <arg value="--output=${basedir}/${intermediate.dex}"/>
             <arg value="--positions=lines"/>
             <arg path="${build.classes.dir}"/>
+            <arg path="bundled-libs"/>         <!-- ADDED -->
         </exec>
     </target>
     <target depends="init,compile,-pre-pre-jar,-pre-jar" if="assets.available" name="-package-res-and-assets" unless="bootclasspath1.available">
