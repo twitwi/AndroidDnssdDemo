@@ -63,7 +63,11 @@ public class DiscoveryActivity extends Activity {
 
                 @Override
                 public void serviceResolved(ServiceEvent ev) {
-                    notifyUser("Service resolved: " + ev.getInfo().getQualifiedName() + " port:" + ev.getInfo().getPort());
+                    String additions = "";
+                    if (ev.getInfo().getInetAddresses() != null && ev.getInfo().getInetAddresses().length > 0) {
+                        additions = ev.getInfo().getInetAddresses()[0].getHostAddress();
+                    }
+                    notifyUser("Service resolved: " + ev.getInfo().getQualifiedName() + " port:" + ev.getInfo().getPort() + additions);
                 }
 
                 @Override
