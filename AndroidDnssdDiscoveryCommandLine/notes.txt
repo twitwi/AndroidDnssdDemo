@@ -1,0 +1,11 @@
+android create project --target android-7 --name AndroidDnssdDiscoveryCommandLine --path . --activity DiscoveryActivity --package com.heeere.androiddnssd.discovery
+
+\cp -r ../AndroidDnssdDiscovery/src .
+\cp -r ../AndroidDnssdDiscovery/res .
+rm -f ./src/com/heeere/androiddnssd/discovery/R.java
+rm -rf bin/
+ant debug
+ant debug install
+
+
+adb logcat
